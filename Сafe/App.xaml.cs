@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Сafe.Model;
 
 namespace Сafe
 {
@@ -13,5 +14,6 @@ namespace Сafe
     /// </summary>
     public partial class App : Application
     {
+        public static CafeEntities context = new CafeEntities();
     }
 }
