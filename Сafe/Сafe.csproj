@@ -86,6 +86,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Windows\AdministratorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Windows\AuthorizationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +143,9 @@
     </Compile>
     <Compile Include="Model\Table.cs">
       <DependentUpon>CafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\AdministratorWindow.xaml.cs">
+      <DependentUpon>AdministratorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
