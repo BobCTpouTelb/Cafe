@@ -49,7 +49,7 @@ namespace Сafe.View.Windows
                     {
                         case 1:
                             // Открываем страницу администратора
-                            mainWindow.Show();
+                            new AdministratorWindow().Show();
                             break;
                         case 2:
                             // Открываем страницу официанта

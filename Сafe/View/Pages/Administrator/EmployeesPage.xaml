@@ -1,0 +1,33 @@
+﻿<Page x:Class="Сafe.View.Windows.Administrator.EmployeesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Сafe.View.Pages.Administrator"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EmployeesPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="400" />
+        </Grid.ColumnDefinitions>
+        <!-- #region Поиск, фильтрация, добавление-->
+        <!-- #region Список сотрудников -->
+        <ListView Name="EmployeesLV" Grid.Row="2"
+                  SelectionChanged="EmployeesLV_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Имя"
+                    DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Должность"
+                    DisplayMemberBinding="{Binding Role.Name}"/>
+                    <GridViewColumn Header="Статус"
+                    DisplayMemberBinding="{Binding IsFired}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Сafe.View.Windows.Administrator;
 
 namespace Сafe.View.Windows
 {
@@ -26,7 +27,9 @@ namespace Сafe.View.Windows
 
         private void EmployeeListBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            // открываем страницу сотрудников
+            // обращаемся к фрэйму по имени, вызываем метод Navigate(), в скобках создаем экземпляр страницы
+            MainFrame.Navigate(new EmployeesPage());
         }
 
         private void OrderListBTN_Click(object sender, RoutedEventArgs e)
