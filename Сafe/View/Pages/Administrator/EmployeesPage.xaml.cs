@@ -33,5 +33,10 @@ namespace Сafe.View.Windows.Administrator
         {
 
         }
+
+        private void saveEmployeeBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

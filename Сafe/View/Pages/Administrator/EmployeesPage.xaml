@@ -6,16 +6,18 @@
       xmlns:local="clr-namespace:Сafe.View.Pages.Administrator"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="EmployeesPage">
+      Title="Добавить сотрудника">
 
-    <Grid>
+    <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="10" />
             <ColumnDefinition Width="400" />
         </Grid.ColumnDefinitions>
         <!-- #region Поиск, фильтрация, добавление-->
-        <!-- #region Список сотрудников -->
+        
+        <!-- #endregion -->
+        <!--#region Список сотрудников -->
         <ListView Name="EmployeesLV" Grid.Row="2"
                   SelectionChanged="EmployeesLV_SelectionChanged">
             <ListView.View>
@@ -29,5 +31,54 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <!-- #endregion -->
+        <!-- #region Полная информация о сотруднике, изменение статуса -->
+        <Grid Name="EmployeeGrid" Grid.Row="2" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Id:" HorizontalAlignment="Right"/>
+            <TextBlock Grid.Column="2" Text="{Binding Id}"/>
+
+            <TextBlock Grid.Row="2" Text="Имя:" HorizontalAlignment="Right"/>
+            <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Name}"/>
+
+            <TextBlock Grid.Row="4" Text="Дата рождения:" HorizontalAlignment="Right"/>
+            <DatePicker Grid.Row="4" Grid.Column="2" Text="{Binding DateBirth, StringFormat=dd.MM.yyyy}"/>
+
+            <TextBlock Grid.Row="6" Text="Статус:" HorizontalAlignment="Right"/>
+            <CheckBox Grid.Row="6" Grid.Column="2" IsChecked="{Binding IsFired}"
+                      Content="Уволен"/>
+
+            <TextBlock Grid.Row="8" Text="Должность:" HorizontalAlignment="Right"/>
+            <ComboBox Name="RoleCMB" Grid.Row="8" Grid.Column="2"/>
+
+            <TextBlock Grid.Row="10" Text="Логин:" HorizontalAlignment="Right"/>
+            <TextBlock Grid.Row="10" Grid.Column="2" Text="{Binding Login}"/>
+
+            <Button Name="saveEmployeeBTN"
+                    Grid.Row="12" Grid.Column="2"
+                    Content="Сохранить изменения"
+                    Click="saveEmployeeBTN_Click"/>
+        </Grid>
+        <!-- #endregion -->
     </Grid>
 </Page>
